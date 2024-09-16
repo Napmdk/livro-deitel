@@ -2,12 +2,12 @@ package view;
 
 import model.Date;
 
+import static model.Date.formataData;
+
 public class DateView {
 
     public static void displayDate(Date date) {
-        System.out.printf("%s%s/%s%s/%s", Date.dateFormatMes(date.getMes()), date.getMes(),
-                Date.dateFormatDia(date.getDia()), date.getDia(),
-                date.getAno());
+        System.out.printf("%s/%s/%s", formataData(date.getMes()), formataData(date.getDia()), date.getAno());
     }
 
 }
