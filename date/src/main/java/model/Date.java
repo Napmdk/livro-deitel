@@ -1,5 +1,8 @@
 package model;
 
+import lombok.Getter;
+
+@Getter
 public class Date {
 
     private int mes;
@@ -68,19 +71,6 @@ public class Date {
 
     private boolean isDiaMenorQueDiaMaximoMes(int dia, int diaMaximo){
         return dia <= diaMaximo;
-    }
-
-
-    public int getMes() {
-        return mes;
-    }
-
-    public int getDia() {
-        return dia;
-    }
-
-    public int getAno() {
-        return ano;
     }
 
     public static String formataData(int value) {

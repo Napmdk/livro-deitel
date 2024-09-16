@@ -7,11 +7,18 @@ set e um get para cada variável de instância. Apresente um método displayDate
 
 package application;
 
+import mapper.DateMapper;
 import model.Date;
+import org.mapstruct.factory.Mappers;
+import org.springframework.beans.factory.annotation.Autowired;
 import view.DateView;
 import java.util.Scanner;
 
 public class DateTest {
+
+    // @Autowired
+    // static DateMapper dateMapper;
+    static DateMapper dateMapper = Mappers.getMapper(DateMapper.class);
 
     public static void main(String[] args) {
 
@@ -25,7 +32,7 @@ public class DateTest {
         System.out.print("Ano: ");
         int ano = input.nextInt();
 
-        Date dateModel = new Date(mes, dia, ano);
+        Date dateModel = dateMapper.mapDate(mes, dia, ano);
 
         DateView.displayDate(dateModel);
 
