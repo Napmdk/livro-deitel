@@ -4,7 +4,7 @@ public class Date {
 
     private int mes;
     private int dia;
-    private int ano;
+    private Integer ano;
 
     public Date(int mes, int dia, int ano) {
         if (mes > 0)
