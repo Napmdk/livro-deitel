@@ -25,21 +25,18 @@ public class CalculadorComissaoVendas {
         Locale.setDefault(Locale.US);
         Scanner input = new Scanner(System.in);
 
-        System.out.print("Insira o id do item vendido ou -1 para terminar as inserções - ");
-        int itemId = input.nextInt();
+        int itemId = 0;
         double totalSalesValue = 0.0;
-        System.out.print("Insira o valor do item vendido - ");
-        double valorItem = input.nextDouble();
         ItemModel model;
 
         while (itemId != -1) {
-            model = new ItemModel(itemId, valorItem);
-            totalSalesValue += model.getItemValue();
             System.out.print("Insira o id do item vendido ou -1 para terminar as inserções - ");
             itemId = input.nextInt();
             if (itemId != -1) {
                 System.out.print("Insira o valor do item vendido - ");
-                valorItem = input.nextDouble();
+                double valorItem = input.nextDouble();
+                model = new ItemModel(itemId, valorItem);
+                totalSalesValue += model.getItemValue();
             }
         }
 
