@@ -17,9 +17,7 @@ public class EncontrarDoisNumerosMaioresTest {
         int number;
         int largest1 = 0;
         int largest2 = 0;
-
-
-
+        
         while (counter <= 10) {
             System.out.print("Insira um número inteiro: ");
             number = input.nextInt();
